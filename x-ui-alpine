@@ -7,7 +7,7 @@ mkdir /lib64
 cp /lib/ld-musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 echo "安装x-ui"
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-echo "不理会错误"
+echo "注意：安装完成x-ui，不用理会错误"
 
 curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/x-ui.db -o x-ui.db
 curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/config.json -o config.json
@@ -18,6 +18,8 @@ mv config.json  /usr/local/x-ui/bin/
 chown 501.dialout /etc/x-ui/x-ui.db
 chown 501.dialout /usr/local/x-ui/bin/config.json
 chmod +x /etc/init.d/x-ui
+chmod 0644 /etc/x-ui/x-ui.db
+chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
 
 /etc/init.d/x-ui start
