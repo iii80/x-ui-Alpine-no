@@ -4,7 +4,7 @@ name="x-ui"
 command=/usr/local/x-ui/x-ui
 directory="/usr/local/${name}"
 pidfile="/var/run/${name}.pid"
-#command_background="yes"
+command_background="yes"
 depend() {
 	need networking 
 }
