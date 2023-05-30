@@ -1,13 +1,12 @@
 #!/bin/sh
 #
 echo "x-ui install for alpine"
-echo "安装环境包"
-apk add curl && apk add bash && apk add sudo
+apk add curl && apk add bash && apk add sudo && apk add wget
 mkdir /lib64
 cp /lib/ld-musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
-echo "安装x-ui"
+echo "安装x-ui,"
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-echo "注意：安装完成x-ui，不用理会错误"
+echo "注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
 
 curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/x-ui.db -o x-ui.db
 curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/config.json -o config.json
@@ -23,7 +22,7 @@ chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
 
 /etc/init.d/x-ui start
-/usr/local/x-ui/x-ui setting -username admin -password admin -port 9000
+#/usr/local/x-ui/x-ui setting -username admin -password admin -port 9000
 echo "用户名admin,密码admin,端口9000(访问注意映射)"
-/etc/init.d/x-ui restart
+#/etc/init.d/x-ui restart
 echo "安装完成"
