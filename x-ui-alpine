@@ -13,8 +13,10 @@ echo -e "${red}安全起见，安装两遍！"
 echo -e "${green}x-ui安装使用的是原版"
 echo -e "${green}脚本只是让x-ui运行到Alpine"
 echo -e "${green}并自动设置开机自启"
-echo -e "${yellow}x-ui面板命令无效，请打开web管理操作"
+echo -e "${red}x-ui面板命令无效，请打开web管理操作"
 echo -e "${green}用户名密码admin，port9000"
+echo -e "${yellow}一路回车，啥也别说！"
+echo -e "${yellow}安全起见，安装两遍！"
 echo -e "----------------------------------------------"
 read -p "回车键继续..."
 echo -e "${green}x-ui install for alpine"
@@ -41,6 +43,9 @@ echo -e "${green}启动x-ui服务，可以ctrl+z退出"
 
 echo -e "${green}安装x-ui"
 echo -e "${yellow}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
+echo -e "${red}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
+echo -e "${yellow}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
+echo -e "${red}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 
