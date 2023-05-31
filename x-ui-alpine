@@ -36,18 +36,18 @@ chmod +x /etc/init.d/x-ui
 chmod 0644 /etc/x-ui/x-ui.db
 chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
-echo "启动x-ui服务，可以ctrl+z退出"
+echo -e "${green}启动x-ui服务，可以ctrl+z退出"
 /etc/init.d/x-ui start
 
-echo "安装x-ui"
-echo "注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
+echo -e "${green}安装x-ui"
+echo -e "${yellow}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 
 
 #/usr/local/x-ui/x-ui setting -username admin -password admin -port 9000
-echo "用户名admin,密码admin,端口9000(访问注意映射)"
+echo -e "${green}用户名admin,密码admin,端口9000(访问注意映射)"
 /etc/init.d/x-ui restart
 rc-update add sshd
 rc-service sshd restart
-echo "安装完成"
+echo -e "${plain}安装完成"
