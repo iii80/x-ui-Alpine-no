@@ -55,7 +55,7 @@ echo && read -p "请输入选择 [0-2]: " num
         ;;
         2) url="https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh"
         ;;
-        *) echo -e "${red}请输入正确的数字 [0-14]${plain}"
+        *) echo -e "${red}请输入正确的数字 [0-2]${plain}"
         ;;
     esac
 
