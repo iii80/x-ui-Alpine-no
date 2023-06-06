@@ -48,7 +48,7 @@ echo -e "
   ${green}2.${plain} 安装 x-ui MHSanaei（伊朗版）"
 }
 show_menu
-echo && read -p "请输入选择 [0-2]: " num
+echo && read -p "默认原版，请输入选择 [0-2]: " num
     case "${num}" in
         0) exit 0
         ;;
@@ -56,7 +56,7 @@ echo && read -p "请输入选择 [0-2]: " num
         ;;
         2) url="https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh"
         ;;
-        *) show_menu
+        *) url="https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh"
         ;;
     esac
 
