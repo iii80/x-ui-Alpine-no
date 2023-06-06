@@ -40,12 +40,32 @@ chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
 /etc/init.d/x-ui start
 
+echo -e "
+  ${green}选择x-ui 面板${plain}
+  ${green}0.${plain} 退出脚本
+  ${green}1.${plain} 安装 x-ui vaxilu（原版）
+  ${green}1.${plain} 安装 x-ui MHSanaei（伊朗版）"
+
+echo && read -p "请输入选择 [0-2]: " num
+
+    case "${num}" in
+        0) exit 0
+        ;;
+        1) url="https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh"
+        ;;
+        2) url="https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh"
+        ;;
+        *) echo -e "${red}请输入正确的数字 [0-14]${plain}"
+        ;;
+    esac
+
+
 echo -e "${green}安装x-ui"
 echo -e "${yellow}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
 echo -e "${red}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
 echo -e "${yellow}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
 echo -e "${red}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+bash <(curl -Ls $url )
 
 
 echo -e "${plain}x-ui安装完成"
