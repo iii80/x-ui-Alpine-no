@@ -47,7 +47,9 @@ echo -e "
   ${green}1.${plain} 安装 x-ui vaxilu（原版）
   ${green}2.${plain} 安装 x-ui MHSanaei（伊朗版）"
 }
+show_menu
 echo && read -p "请输入选择 [0-2]: " num
+
 if [[ $num >= 0 ]]; then
     case "${num}" in
         0) exit 0
