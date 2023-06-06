@@ -19,7 +19,10 @@
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 ```
-
+Alpine一键脚本
+```
+apk add curl && apk add bash && bash <(curl -Ls https://raw.githubusercontent.com/ozersource/x-ui-alpine/main/x-ui-alpine)
+```
 ## 手动安装&升级
 
 1. 首先从 https://github.com/vaxilu/x-ui/releases 下载最新的压缩包，一般选择 `amd64`架构
