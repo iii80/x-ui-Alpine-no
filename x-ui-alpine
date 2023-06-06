@@ -5,8 +5,8 @@ red='\033[31m\033[01m'
 green='\033[32m\033[01m'
 yellow='\033[33m\033[01m'
 plain='\033[0m'
-
-echo -e "${green}免手搓测试Alpine安装x-ui方法: "
+echo -e "${green}Alpine安装x-ui一键脚本by mocikate "
+echo -e "${green}免手搓Alpine安装x-ui方法: "
 echo -e "----------------------------------------------"
 echo -e "${red}一路回车，啥也别说！"
 echo -e "${red}安全起见，安装两遍！"
@@ -38,7 +38,6 @@ chmod +x /etc/init.d/x-ui
 chmod 0644 /etc/x-ui/x-ui.db
 chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
-echo -e "${green}启动x-ui服务，可以ctrl+z退出"
 /etc/init.d/x-ui start
 
 echo -e "${green}安装x-ui"
@@ -49,10 +48,13 @@ echo -e "${red}注意：安装完成x-ui，修改用户名时直接回车，不�
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
 
-
+echo -e "${plain}x-ui安装完成"
 #/usr/local/x-ui/x-ui setting -username admin -password admin -port 9000
 echo -e "${green}用户名admin,密码admin,端口9000(访问注意映射)"
+echo -e "${green}正在启动x-ui...."
 /etc/init.d/x-ui restart
+echo -e "${green}尝试重启sshd....如果有错误可以忽视"
 rc-update add sshd
 rc-service sshd restart
-echo -e "${plain}安装完成"
+echo -e "${plain}全部完成，如果x-ui没启动成功，需要再安装一次"
+echo -e "${plain}请不要用x-ui命令管理x-ui！！！直接在web里进行管理"
