@@ -49,8 +49,6 @@ echo -e "
 }
 show_menu
 echo && read -p "请输入选择 [0-2]: " num
-
-if [[ $num >= 0 ]]; then
     case "${num}" in
         0) exit 0
         ;;
@@ -59,11 +57,10 @@ if [[ $num >= 0 ]]; then
         2) url="https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh"
         ;;
         *) echo -e "${red}请输入正确的数字 [0-2]${plain}"
+        show_menu
         ;;
     esac
-else
-show_menu
-fi
+
 
 echo -e "${green}安装x-ui"
 echo -e "${yellow}注意：安装完成x-ui，修改用户名时直接回车，不用理会错误"
